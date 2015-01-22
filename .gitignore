@@ -1,4 +1,5 @@
 /Debug/
+build/*
 .settings/
 .cproject
 .directory
@@ -7,3 +8,5 @@ build.*
 .settings/language.settings.xml
 *.xml
 /Simulate/
+wpilib/*
+
