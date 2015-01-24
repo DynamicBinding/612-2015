@@ -1,11 +1,14 @@
 #include "Drivetrain.h"
 #include "../RobotMap.h"
 
-Drivetrain::Drivetrain(uint32_t talonfl, uint32_t talonbl, uint32_t talonfr, uint32_t talonbr):
+Drivetrain::Drivetrain(CanTalonSRX* Talonfl, CanTalonSRX* Talonfr, CanTalonSRX* Talonbl, CanTalonSRX* Talonbr):
 		Subsystem("Drivetrain"),
-		RobotDrive(talonfl, talonbl, talonfr, talonbr)
+		RobotDrive(Talonfl, Talonfr, Talonbl, Talonbr)
 {
-
+	Talonfl = new CanTalonSRX(1);
+	Talonfr = new CanTalonSRX(2);
+	Talonbl = new CanTalonSRX(3);
+	Talonbr = new CanTalonSRX(4);
 }
 
 void Drivetrain::InitDefaultCommand()

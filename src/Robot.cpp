@@ -41,7 +41,7 @@ private:
 	void TeleopPeriodic()
 	{
 		printf("Teleop Periodic start");
-		moveCommand->Execute();
+		moveCommand->Start();
 	}
 
 	void TestPeriodic()
