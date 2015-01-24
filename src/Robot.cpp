@@ -7,8 +7,9 @@
 
 void Robot::RobotInit()
 {
+	std::printf("Hello World!\n");
 	robotDrive = new RobotDrive(MOTOR_LF,MOTOR_LR,MOTOR_RF,MOTOR_RR);//The 4 talons
-	joystick = new Joystick(1);//Right hand joystick
+	joystick = new Joystick(0);//Right hand joystick
 	robot = this;
 }
 
@@ -17,7 +18,7 @@ void Robot::DisabledInit()
 
 }
 
-void DisabledPeriodic()
+void DisabledMETALSHAVINGSPeriodic()
 {
 
 }
@@ -44,9 +45,10 @@ void Robot::TeleopInit()
 
 void Robot::TeleopPeriodic()
 {
+	std::printf("Teleop shit\n");
 	float l = joystick->GetRawAxis(1);
 	float r = joystick->GetRawAxis(5);
-	robotDrive->TankDrive(l,r);
+	robotDrive->TankDrive(-l,r);
 }
 
 void Robot::TestInit()
